@@ -11,6 +11,8 @@ public class EntityInfo : MonoBehaviour
     int Level;
     float Exp, ExpToNextLevel;
 
+    public GameObject Target; // This is a reference to the target that this Gameobject is currently going to attack/support.
+
     Entity info;
 
     Spellbook Spells;
@@ -90,6 +92,11 @@ public class EntityInfo : MonoBehaviour
     public void AddSpell() 
     {
 
+    }
+
+    public void SetTarget(GameObject target) 
+    {
+        this.Target = target;
     }
 
 }

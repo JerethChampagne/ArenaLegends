@@ -17,10 +17,13 @@ public class Skill
         this.angle = angle;
     }
 
-    public IEnumerator Cast() 
+    public void Cast() 
     {
-        yield return new WaitForSeconds(.1f);
+        
     }
+    
+    // Below are the Functions to find enemies that are within range of an attack.
 
+    
 
 }
