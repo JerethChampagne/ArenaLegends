@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+
 
 public class EntityInfo : MonoBehaviour 
 {
@@ -11,6 +13,8 @@ public class EntityInfo : MonoBehaviour
     int Level;
     float Exp, ExpToNextLevel;
 
+    List<float> cooldowns;
+
     public GameObject Target; // This is a reference to the target that this Gameobject is currently going to attack/support.
 
     Entity info;
@@ -21,13 +25,26 @@ public class EntityInfo : MonoBehaviour
 	void Start () 
     {
         info = new Entity(100, 10, 10, 10, 10, this.gameObject);
+        cooldowns = new List<float>();
 	}
 	
 	// Update is called once per frame
 	void Update () 
     {
+
+        IncrementCooldowns(Time.deltaTime);
 	
 	}
+
+    void IncrementCooldowns(float time) 
+    {
+
+        for (int i = 0; i < cooldowns.Count; i++)
+        {
+            cooldowns[i] += time;
+        }
+
+    }
 
     /// <summary>
     ///  This Should be called anytime at least one of the stats are altered.
@@ -86,12 +103,22 @@ public class EntityInfo : MonoBehaviour
 
     public void CastSpell(int num) 
     {
-        Spells.Cast(num);
+        if ((cooldowns[num] - Spells.GetCooldown(num)) >= 0.0f) 
+        {
+            Spells.Cast(num, gameObject, Target);
+            cooldowns[num] = 0.0f;
+            return;
+        }
+
+        throw new System.Exception("Skill is on cooldown!");
+
     }
 
     public void AddSpell() 
     {
-
+        cooldowns.Add(0.0f);
+        throw new System.NotImplementedException("Adding a skill is not implemented yet!");
+        
     }
 
     public void SetTarget(GameObject target) 

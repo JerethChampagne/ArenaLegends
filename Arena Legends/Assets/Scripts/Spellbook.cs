@@ -4,12 +4,26 @@ using System.Collections.Generic;
 
 public class Spellbook
 {
-    //List<Skill> Skills; // Has not been implemented yet.
+    List<Skill> Skills; 
 
-
-    public void Cast(int num) 
+    public Spellbook() 
     {
+        Skills = new List<Skill>();
+    }
 
+    public void AddSkill(Skill sk) 
+    {
+        Skills.Add(sk);
+    }
+
+    public void Cast(int num, GameObject caster, GameObject target) 
+    {
+        Skills[num].Cast(target, caster);
+    }
+
+    public float GetCooldown(int num)
+    {
+        return Skills[num].GetCooldown();
     }
 
 }
