@@ -7,6 +7,9 @@ public class Skill
     string Name, Description;
     float damage, range, cooldown, angle;
 
+    public delegate void SkillMechanic<T>(T item);
+    SkillMechanic<Entity> mechanic;
+
     public Skill(string name, string des, float d, float r, float cd, float angle) 
     {
         this.Name = name;
@@ -21,6 +24,7 @@ public class Skill
     {
         yield return new WaitForSeconds(.1f);
     }
+
 
 
 }
