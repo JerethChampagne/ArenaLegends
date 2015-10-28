@@ -4,11 +4,11 @@ using System.Collections.Generic;
 
 public class Skill
 {
-    string Name, Description;
-    float damage, range, cooldown, angle;
-    GameObject pSys, Caster;
-    Vector3 spellStart;
-    bool hasCaster;
+    protected string Name, Description;
+    protected float damage, range, cooldown, angle;
+    protected GameObject pSys, Caster;
+    protected Vector3 spellStart;
+    protected bool hasCaster;
 
     public Skill(string name, string des, float d, float r, float cd, float angle, GameObject ps) 
     {

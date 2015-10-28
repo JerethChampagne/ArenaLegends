@@ -4,12 +4,12 @@ using System.Collections.Generic;
 
 public class Entity
 {
-    float Health, Defense, Strength, Intellect, Dexterity; // All the stats for this class.
-    public GameObject prefab; // Prefab of the model used for the instance.
+    protected float Health, Defense, Strength, Intellect, Dexterity; // All the stats for this class.
+    protected GameObject prefab; // Prefab of the model used for the instance.
 
-    int Level;
+    protected int Level;
 
-    float exp, expToLevel;
+    protected float exp, expToLevel;
 
     public Entity(float hp, float str, float def, float intel, float dex, GameObject me) 
     {
