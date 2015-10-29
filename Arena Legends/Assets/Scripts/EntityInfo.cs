@@ -120,10 +120,38 @@ public class EntityInfo : MonoBehaviour
         throw new System.NotImplementedException("Adding a skill is not implemented yet!");
         
     }
-
+ 
     public void SetTarget(GameObject target) 
     {
         this.Target = target;
     }
+
+    public void AddExperience(float amount) 
+    {
+        this.Exp += amount;
+        if (CheckLevelUp()) 
+        {
+            // It is true so we need to determine to new amount of experience needed to level.
+            float tempAmount = Mathf.Abs(this.Exp - this.ExpToNextLevel);
+            // tempAmount is the experience the player will have when they start this level.
+            this.Level++;
+            this.Exp = tempAmount;
+            this.ExpToNextLevel += (this.ExpToNextLevel * (.5f)) + (2 * this.Level);
+
+        }
+    }
+
+    bool CheckLevelUp() 
+    {
+        if (this.Exp >= this.ExpToNextLevel) 
+        {
+            return true;
+        }
+
+        return false;
+        
+    }
+
+
 
 }
