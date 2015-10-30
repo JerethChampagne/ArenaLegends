@@ -66,4 +66,14 @@ public class Entity
         this.Dexterity++;
     }
 
+    public void LevelUp() 
+    {
+        AddDefensePoint();
+        AddDexterityPoint();
+        AddIntellectPoint();
+        AddIntellectPoint();
+        AddIntellectPoint();
+        AddStrengthPoint();
+    }
+
 }

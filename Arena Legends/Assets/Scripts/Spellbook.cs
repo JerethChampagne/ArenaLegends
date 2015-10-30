@@ -26,4 +26,9 @@ public class Spellbook
         return Skills[num].GetCooldown();
     }
 
+    public Skill GetSkill(int i)
+    {
+        return Skills[i];
+    }
+
 }

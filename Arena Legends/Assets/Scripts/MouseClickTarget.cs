@@ -4,7 +4,7 @@ using System.Collections;
 public class MouseClickTarget : MonoBehaviour 
 {
 
-    GameObject player;
+    public GameObject player;
     EntityInfo info;
 
 	// Use this for initialization

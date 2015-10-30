@@ -8,10 +8,11 @@ public class EntityInfo : MonoBehaviour
 
     public float Health, Strength, Defense, Intellect, Dexterity;
     float Thealth, Tstrength, Tdefense, Tintellect, Tdexterity;
-    float Spellpower, Attack;
+    public float Spellpower, Attack;
     float MoveSpeed, TMoveSpeed;
-    int Level;
-    float Exp, ExpToNextLevel;
+    public int Level;
+    public int Exp, ExpToNextLevel;
+    bool init = false;
 
     List<float> cooldowns;
 
@@ -25,7 +26,13 @@ public class EntityInfo : MonoBehaviour
 	void Start () 
     {
         info = new Entity(100, 10, 10, 10, 10, this.gameObject);
+        SetStats();
         cooldowns = new List<float>();
+        if (!init) 
+        {
+            Init();
+        }
+        
 	}
 	
 	// Update is called once per frame
@@ -33,8 +40,22 @@ public class EntityInfo : MonoBehaviour
     {
 
         IncrementCooldowns(Time.deltaTime);
+
+        // This is used for testing:
+        if (Input.GetKeyDown(KeyCode.F12)) 
+        {
+            KillEnemy();
+        }
 	
 	}
+
+    void Init() 
+    {
+        this.Level = 1;
+        this.Exp = 0;
+        this.ExpToNextLevel = 10;
+        init = true;
+    }
 
     void IncrementCooldowns(float time) 
     {
@@ -63,17 +84,18 @@ public class EntityInfo : MonoBehaviour
 
     void SetFullHealth() 
     {
-        this.Health = this.info.GetBaseHealth() + Thealth + (this.Defense * .5f) + (this.Strength * .25f);
+        this.Health = Mathf.CeilToInt(this.info.GetBaseHealth() + Thealth + (this.Defense * .5f) + (this.Strength * .25f) + (this.Dexterity * .25f) + (this.Intellect * .25f) + (this.Health / 2));
+        
     }
 
     void SetAttack() 
     {
-        this.Attack = this.Strength + (this.Dexterity * 0.25f) + (this.Defense * 0.15f);
+        this.Attack = Mathf.CeilToInt(this.Strength + (this.Dexterity * 0.25f) + (this.Defense * 0.15f));
     }
 
     void SetSpellpower() 
     {
-        this.Spellpower = this.Intellect * 1.5f;
+        this.Spellpower = Mathf.CeilToInt(this.Intellect * 1.75f);
     }
 
     void SetMoveSpeed() 
@@ -126,18 +148,21 @@ public class EntityInfo : MonoBehaviour
         this.Target = target;
     }
 
-    public void AddExperience(float amount) 
+    public void AddExperience(int amount) 
     {
         this.Exp += amount;
         if (CheckLevelUp()) 
         {
             // It is true so we need to determine to new amount of experience needed to level.
-            float tempAmount = Mathf.Abs(this.Exp - this.ExpToNextLevel);
+            int tempAmount = Mathf.Abs(this.Exp - this.ExpToNextLevel);
             // tempAmount is the experience the player will have when they start this level.
             this.Level++;
             this.Exp = tempAmount;
-            this.ExpToNextLevel += (this.ExpToNextLevel * (.5f)) + (2 * this.Level);
+            this.ExpToNextLevel += Mathf.CeilToInt(this.ExpToNextLevel * (.5f) + (2 * this.Level));
 
+            // Level up the base Entity also:
+            info.LevelUp();
+            SetStats();
         }
     }
 
@@ -152,6 +177,11 @@ public class EntityInfo : MonoBehaviour
         
     }
 
+
+    void KillEnemy() 
+    {
+        AddExperience(1);
+    }
 
 
 }
