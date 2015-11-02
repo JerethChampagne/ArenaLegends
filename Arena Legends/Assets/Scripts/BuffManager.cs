@@ -1,0 +1,61 @@
+﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
+
+
+
+public class BuffManager : MonoBehaviour 
+{
+
+    List<IBuffable> buffables = new List<IBuffable>();
+    EntityInfo eInfo;
+
+    void Awake() 
+    {
+        if (eInfo == null) 
+        {
+            // Make a reference to the EntityInfo of this Buffmanager's specific character.
+            eInfo = GetComponent<EntityInfo>();
+        }
+
+    }
+
+	// Use this for initialization
+	void Start () 
+    {
+	    
+	}
+	
+	// Update is called once per frame
+	void Update () 
+    {
+
+        for (int i = 0; i < buffables.Count; i++) 
+        {
+            buffables[i].Apply(this.eInfo);
+
+            // Check if the buff is finished.
+            if (Time.time >= buffables[i].FinishTime) 
+            {
+                if (buffables[i] is StatMod) 
+                {
+                    // Buff is a StatMod, so we need to undo its effects and then remove it.
+                    buffables[i].finished = true;
+                    buffables[i].Apply(this.eInfo);
+                }
+
+                // Remove this buff.
+                buffables.Remove(buffables[i]); 
+            }
+        }
+	    
+	}
+
+    public void AddBuffable(IBuffable buff, float timer)
+    {
+        // Setup when the buff should finish.(current time + timer)
+        buff.FinishTime = Time.time + timer;
+        buffables.Add(buff);
+    }
+
+}

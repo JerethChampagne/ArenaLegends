@@ -24,7 +24,7 @@ public class VectorMage : Entity
 
     public void CastVector() 
     {
-
+        // TODO: Implement CastVector.
     }
 
 }

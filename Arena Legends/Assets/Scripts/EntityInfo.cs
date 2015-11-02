@@ -3,6 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 
 
+
+public enum ClassType 
+{
+    Warrior,
+    Mage,
+    Rogue
+}
+
+
 public class EntityInfo : MonoBehaviour 
 {
 
@@ -65,6 +74,35 @@ public class EntityInfo : MonoBehaviour
             cooldowns[i] += time;
         }
 
+    }
+
+    public void ReduceHealth(float amount) 
+    {
+        this.Health -= amount;
+    }
+
+    public void AlterStrength(float amount) 
+    {
+        this.Tstrength += amount;
+        SetStats();
+    }
+
+    public void AlterDefense(float amount) 
+    {
+        this.Tdefense += amount;
+        SetStats();
+    }
+
+    public void AlterDexterity(float amount) 
+    {
+        this.Tdexterity += amount;
+        SetStats();
+    }
+
+    public void AlterIntellect(float amount) 
+    {
+        this.Tintellect += amount;
+        SetStats();
     }
 
     /// <summary>
