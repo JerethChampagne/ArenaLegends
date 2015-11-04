@@ -7,41 +7,39 @@ public enum StatChange
     Strength,
     Defense,
     Dexterity,
-    Intellect
+    Intellect,
+    Speed
 }
 
-public interface IBuffable
+public abstract class IBuffable
 {
-    void Apply(EntityInfo victim);
-    float FinishTime { get; set; }
-    bool finished { get; set; }
-    int value { get; set; }
-	
+    public abstract void Apply(EntityInfo victim);
+    public float FinishTime { get; set; }
+    public bool finished { get; set; }
+    public int value { get; set; }
+    protected bool init { get; set; }
+
 }
 
 public class Poison : IBuffable 
 {
-    public int value { get; set; }
-    public float FinishTime { get; set; }
-    public bool finished { get; set; }
 
-    public void Apply(EntityInfo victim) 
+    public override void Apply(EntityInfo victim) 
     {
         
         if (victim != null) 
         {
-            victim.ReduceHealth(value);
+
+            victim.ReduceHealth(value * Time.deltaTime);
+            
         }
     }
 }
 
 public class StatMod : IBuffable 
 {
-    public int value { get; set; }
-    public float FinishTime { get; set; }
-    bool init = false;
     List<StatChange> stats = new List<StatChange>();
-    public bool finished { get; set; }
+
 
     public void AddStatWatch(StatChange stat)
     {
@@ -49,7 +47,7 @@ public class StatMod : IBuffable
     }
 
 
-    public void Apply(EntityInfo victim) 
+    public override void Apply(EntityInfo victim) 
     {
         if (finished) 
         {
@@ -81,6 +79,10 @@ public class StatMod : IBuffable
                     victim.AlterIntellect(value);
                     break;
 
+                case StatChange.Speed:
+                    victim.AlterSpeed(value);
+                    break;
+
                 default:
 
                     break;
@@ -93,4 +95,76 @@ public class StatMod : IBuffable
 
 }
 
+public class Burn : IBuffable
+{
+
+    public override void Apply(EntityInfo victim) 
+    {
+        if (victim != null) 
+        {
+            victim.ReduceHealth(value * Time.deltaTime);
+        }
+    }
+}
+
+public class Stun : IBuffable 
+{
+
+    public override void Apply(EntityInfo victim) 
+    {
+        if (victim != null) 
+        {
+
+            if (this.FinishTime >= Time.time) 
+            {
+                victim.stunned = false;
+                return;
+            }
+
+            victim.stunned = true;
+
+        }
+    }
+}
+
+public class Freeze : IBuffable 
+{
+
+    public override void Apply(EntityInfo victim) 
+    {
+        if (victim != null)
+        {
+
+            if (this.FinishTime >= Time.time)
+            {
+                victim.frozen = false;
+                return;
+            }
+
+            victim.frozen = true;
+
+        }
+    }
+}
+
+public class ExtraHits : IBuffable 
+{
+    public int HitNum { get; set; }
+
+    public override void Apply(EntityInfo victim)
+    {
+        victim.ReduceHealth(value);
+        HitNum--;
+
+        if (HitNum <= 0) 
+        {
+            finished = true;
+
+            return;
+        }
+
+        return;
+
+    }
+}
 

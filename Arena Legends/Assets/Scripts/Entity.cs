@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class Entity
 {
-    protected float Health, Defense, Strength, Intellect, Dexterity; // All the stats for this class.
+    protected float Health, Defense, Strength, Intellect, Dexterity, MoveSpeed; // All the stats for this class.
     protected GameObject prefab; // Prefab of the model used for the instance.
 
     protected int Level;
@@ -44,6 +44,11 @@ public class Entity
     public float GetBaseDexterity() 
     {
         return this.Dexterity;
+    }
+
+    public float GetBaseMoveSpeed() 
+    {
+        return this.MoveSpeed;
     }
 
     public void AddStrengthPoint()

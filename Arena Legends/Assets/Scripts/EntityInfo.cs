@@ -15,13 +15,16 @@ public enum ClassType
 public class EntityInfo : MonoBehaviour 
 {
 
-    public float Health, Strength, Defense, Intellect, Dexterity;
-    float Thealth, Tstrength, Tdefense, Tintellect, Tdexterity;
+    public float Health, Strength, Defense, Intellect, Dexterity, MoveSpeed;
+    float Thealth, Tstrength, Tdefense, Tintellect, Tdexterity, TMoveSpeed;
     public float Spellpower, Attack;
-    float MoveSpeed, TMoveSpeed;
     public int Level;
     public int Exp, ExpToNextLevel;
     bool init = false;
+
+    public bool stunned = false;
+    public bool frozen = false;
+    
 
     List<float> cooldowns;
 
@@ -105,6 +108,12 @@ public class EntityInfo : MonoBehaviour
         SetStats();
     }
 
+    public void AlterSpeed(float amount) 
+    {
+        this.TMoveSpeed += amount;
+        SetStats();
+    }
+
     /// <summary>
     ///  This Should be called anytime at least one of the stats are altered.
     /// </summary>
@@ -138,27 +147,27 @@ public class EntityInfo : MonoBehaviour
 
     void SetMoveSpeed() 
     {
-        //this.MoveSpeed = 
+        this.MoveSpeed = Mathf.CeilToInt(this.TMoveSpeed + info.GetBaseMoveSpeed());
     }
 
     void SetStrength() 
     {
-        this.Strength = this.info.GetBaseStrength() + Tstrength;
+        this.Strength = Mathf.CeilToInt(this.info.GetBaseStrength() + this.Tstrength);
     }
 
     void SetDefense() 
     {
-        this.Defense = this.info.GetBaseDefense() + Tdefense;
+        this.Defense = Mathf.CeilToInt(this.info.GetBaseDefense() + this.Tdefense);
     }
 
     void SetIntellect() 
     {
-        this.Intellect = this.info.GetBaseIntellect() + Tintellect;
+        this.Intellect = Mathf.CeilToInt(this.info.GetBaseIntellect() + this.Tintellect);
     }
 
     void SetDexterity() 
     {
-        this.Dexterity = this.info.GetBaseDexterity() + Tdexterity;
+        this.Dexterity = Mathf.CeilToInt(this.info.GetBaseDexterity() + this.Tdexterity);
     }
 
     public void CastSpell(int num) 
