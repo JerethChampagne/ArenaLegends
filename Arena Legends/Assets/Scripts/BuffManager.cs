@@ -7,6 +7,8 @@ using System.Collections.Generic;
 public class BuffManager : MonoBehaviour 
 {
 
+    public bool poison, statmod, frozen, burn, stun, extrahits;
+
     List<IBuffable> buffables = new List<IBuffable>();
     EntityInfo eInfo;
 
@@ -39,9 +41,30 @@ public class BuffManager : MonoBehaviour
             {
                 if (buffables[i] is StatMod) 
                 {
+                    statmod = true;
                     // Buff is a StatMod, so we need to undo its effects and then remove it.
                     buffables[i].finished = true;
                     buffables[i].Apply(this.eInfo);
+                }
+                if (buffables[i] is Burn) 
+                {
+                    burn = true;
+                }
+                if (buffables[i] is Stun) 
+                {
+                    stun = true;
+                }
+                if (buffables[i] is Poison) 
+                {
+                    poison = true;
+                }
+                if (buffables[i] is Freeze) 
+                {
+                    frozen = true;
+                }
+                if (buffables[i] is ExtraHits) 
+                {
+                    extrahits = true;
                 }
 
                 // Remove this buff.
@@ -55,6 +78,14 @@ public class BuffManager : MonoBehaviour
     {
         // Setup when the buff should finish.(current time + timer)
         buff.FinishTime = Time.time + timer;
+        buffables.Add(buff);
+    }
+
+    public void AddBuffable(IBuffable buff, float timer, int value) 
+    {
+        // Setup when the buff should finish
+        buff.FinishTime = Time.time + timer;
+        buff.value = value;
         buffables.Add(buff);
     }
 
