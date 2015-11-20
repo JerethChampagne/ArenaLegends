@@ -56,7 +56,8 @@ public class EntityInfo : MonoBehaviour
         // This is used for testing:
         if (Input.GetKeyDown(KeyCode.F12)) 
         {
-            KillEnemy();
+            //KillEnemy();
+            ThrowSomething();
         }
 	
 	}
@@ -230,5 +231,9 @@ public class EntityInfo : MonoBehaviour
         AddExperience(1);
     }
 
+    private void ThrowSomething() 
+    {
+        GetComponentInChildren<LobObject>().Init(Target.transform.position, 1.0f);
+    }
 
 }
