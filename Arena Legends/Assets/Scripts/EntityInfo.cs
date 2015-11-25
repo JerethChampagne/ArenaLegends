@@ -24,7 +24,8 @@ public class EntityInfo : MonoBehaviour
 
     public bool stunned = false;
     public bool frozen = false;
-    
+
+    ClassType _class;
 
     List<float> cooldowns;
 
@@ -173,7 +174,7 @@ public class EntityInfo : MonoBehaviour
 
     public void CastSpell(int num) 
     {
-        if ((cooldowns[num] - Spells.GetCooldown(num)) >= 0.0f) 
+        if (cooldowns[num] >= Spells.GetCooldown(num)) 
         {
             Spells.Cast(num, gameObject, Target);
             cooldowns[num] = 0.0f;
@@ -184,10 +185,11 @@ public class EntityInfo : MonoBehaviour
 
     }
 
-    public void AddSpell() 
+    public void AddSpell(Skill sk) 
     {
         cooldowns.Add(0.0f);
-        throw new System.NotImplementedException("Adding a skill is not implemented yet!");
+        Spells.AddSkill(sk);
+        //throw new System.NotImplementedException("Adding a skill is not implemented yet!");
         
     }
  
@@ -209,7 +211,24 @@ public class EntityInfo : MonoBehaviour
             this.ExpToNextLevel += Mathf.CeilToInt(this.ExpToNextLevel * (.5f) + (2 * this.Level));
 
             // Level up the base Entity also:
-            info.LevelUp();
+            switch (_class) 
+            {
+                case ClassType.Mage:
+                    this.info.LevelUp(1f, 1f, 1f, 3f);
+                    break;
+
+                case ClassType.Rogue:
+                    this.info.LevelUp(1f, 1f, 3f, 1f);
+                    break;
+
+                case ClassType.Warrior:
+                    this.info.LevelUp(2f, 2f, 1f, 1f);
+                    break;
+
+                default:
+
+                    break;
+            }
             SetStats();
         }
     }
