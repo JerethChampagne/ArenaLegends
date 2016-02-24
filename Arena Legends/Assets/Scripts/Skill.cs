@@ -76,6 +76,9 @@ public class Skill
     void PlaySpell(GameObject target) 
     {
         MonoBehaviour.Instantiate(pSys);
+
+        // EffectSetting's target needs to be assigned here.
+
     }
 
 

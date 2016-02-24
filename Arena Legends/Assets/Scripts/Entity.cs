@@ -9,7 +9,7 @@ public class Entity
 
     protected int Level;
 
-    protected float exp, expToLevel;
+    //protected float exp, expToLevel;
 
     public Entity(float hp, float str, float def, float intel, float dex, GameObject me) 
     {
@@ -51,34 +51,33 @@ public class Entity
         return this.MoveSpeed;
     }
 
-    public void AddStrengthPoint()
+    public void AddStrengthPoint(float num)
     {
-        this.Strength++;
+        this.Strength += num;
     }
 
-    public void AddDefensePoint() 
+    public void AddDefensePoint(float num) 
     {
-        this.Defense++;
+        this.Defense += num;
     }
 
-    public void AddIntellectPoint() 
+    public void AddIntellectPoint(float num) 
     {
-        this.Intellect++;
+        this.Intellect += num;
     }
 
-    public void AddDexterityPoint() 
+    public void AddDexterityPoint(float num) 
     {
-        this.Dexterity++;
+        this.Dexterity += num;
     }
 
-    public void LevelUp() 
+    public void LevelUp(float str, float def, float dex, float intel) 
     {
-        AddDefensePoint();
-        AddDexterityPoint();
-        AddIntellectPoint();
-        AddIntellectPoint();
-        AddIntellectPoint();
-        AddStrengthPoint();
+        AddDefensePoint(def);
+        AddDexterityPoint(dex);
+        AddIntellectPoint(intel);
+        AddStrengthPoint(str);
+        this.Level++;
     }
 
 }

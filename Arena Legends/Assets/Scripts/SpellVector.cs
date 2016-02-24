@@ -22,6 +22,7 @@ public class SpellVector
     bool offensive, support;
 
     Skill skill;
+    
 
     /// <summary>
     /// Creates a SpellVector object where damage is positive to do support, negative to be offensive; effect is the added effect (i.e. DoT) that the spell will have; positive means buff and negative means debuff.
