@@ -12,9 +12,14 @@ public class VectorMage : Entity
         
     }
 
-    public void CreateVector(float damage, float cost, float effect, VectorType type)
+    public void CreateVector(float damage, float cost, float effect, float offering, GameObject spellEffect, GameObject target)
     {
-        spellVector = new SpellVector(damage, cost, effect, type);
+        // We need to get the percentage increase from cost to offering (i.e. offering = 52 and cost = 50, so increase = 52/50 = 1.04 so damage and effect increase by 1.04).
+        float increase = offering / cost;
+
+        // Create the SpellVector to cast.
+        spellVector = new FireVector( (damage * increase), cost, (effect * increase), spellEffect, target);
+
     }
 
     public void CancelVector() 

@@ -80,4 +80,9 @@ public class Entity
         this.Level++;
     }
 
+    public GameObject GetGameObject() 
+    {
+        return this.prefab;
+    }
+
 }

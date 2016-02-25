@@ -86,6 +86,12 @@ public class EntityInfo : MonoBehaviour
         this.Health -= amount;
     }
 
+    public void AlterHealthOffset(float amount) 
+    {
+        this.Thealth += amount;
+        SetStats();
+    }
+
     public void AlterStrength(float amount) 
     {
         this.Tstrength += amount;
