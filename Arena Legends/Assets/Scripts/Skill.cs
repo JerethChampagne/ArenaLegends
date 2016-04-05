@@ -9,6 +9,7 @@ public class Skill
     protected GameObject pSys, Caster;
     protected Vector3 spellStart;
     protected bool hasCaster;
+    protected float coolTimer;
 
     public Skill(string name, string des, float d, float r, float cd, float angle, GameObject ps) 
     {
@@ -20,6 +21,7 @@ public class Skill
         this.angle = angle;
         this.pSys = ps;
         hasCaster = false;
+        this.coolTimer = 0f;
     }
 
     void Init(GameObject caster) 
@@ -29,22 +31,43 @@ public class Skill
         hasCaster = true;
     }
 
-    public float GetCooldown() 
+    public bool isOnCooldown() 
     {
-        return cooldown;
+        if (coolTimer <= Time.time) 
+        {
+            return false;
+        }
+        else { return true; }
+        
     }
 
-    public void Cast(GameObject target, GameObject caster) 
+    public bool Cast(GameObject target, GameObject caster) 
     {
+        // Make sure the Skill can be used on the target.
         if (CastDisplacement(caster, target)) 
         {
+            coolTimer = Time.time + cooldown;
             if (!hasCaster) 
             {
                 Init(caster);
             }
 
-            PlaySpell(target);
+            Debug.Log("There are no particle systems to play yet!");
+            //PlaySpell(target);
+
+            // Alter the Damage of the spell.
+            EntityInfo pInfo = caster.GetComponent<EntityInfo>();
+            float newDmg = this.damage + pInfo.GetAttack() + pInfo.GetSpellpower();
+
+            // Apply the new damage to the target.
+            EntityInfo eInfo = target.gameObject.GetComponent<EntityInfo>();
+            eInfo.ReduceHealth(newDmg, DamageType.Skill);
+
+            return true;
         }
+
+        return false;
+
     }
 
     bool CastDisplacement(GameObject caster, GameObject target) 
@@ -53,20 +76,23 @@ public class Skill
 
         // Get the vector from the defender to the attacker.
         Vector3 displacement = target.transform.position - caster.transform.position;
-
+        Debug.Log("Displacement Vector: " + displacement.ToString());
         // If the angle between the caster's forward and the displacement is more than 90 then the defender is behind the attacker.
         if (Vector3.Angle(caster.transform.forward, displacement) > 90) 
         {
+            Debug.Log("Target is not in front of attacker.");
             return false;
         }
 
         // Now check if the target is within range of the skill.
         if (Vector3.Distance(caster.transform.position, target.transform.position) > range) 
         {
+            Debug.Log("Target is not within the range of the skill.");
             return false;
         }
 
         // The target must be in front of the caster, so this check has passed.
+        Debug.Log("Target is valid.");
         return true;
 
     }

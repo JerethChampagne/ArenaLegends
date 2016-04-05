@@ -11,6 +11,11 @@ public enum ClassType
     Rogue
 }
 
+public enum DamageType 
+{
+    Skill,
+    Effect
+}
 
 public class EntityInfo : MonoBehaviour 
 {
@@ -27,9 +32,9 @@ public class EntityInfo : MonoBehaviour
 
     ClassType _class;
 
-    List<float> cooldowns;
+    //List<float> cooldowns;
 
-    public GameObject Target; // This is a reference to the target that this Gameobject is currently going to attack/support.
+    //public GameObject Target; // This is a reference to the target that this Gameobject is currently going to attack/support.
 
     Entity info;
 
@@ -40,7 +45,8 @@ public class EntityInfo : MonoBehaviour
     {
         info = new Entity(100, 10, 10, 10, 10, this.gameObject);
         SetStats();
-        cooldowns = new List<float>();
+        //cooldowns = new List<float>();
+        Spells = new Spellbook();
         if (!init) 
         {
             Init();
@@ -52,15 +58,15 @@ public class EntityInfo : MonoBehaviour
 	void Update () 
     {
 
-        IncrementCooldowns(Time.deltaTime);
+        //IncrementCooldowns(Time.deltaTime);
 
-        // This is used for testing:
+       /* // This is used for testing:
         if (Input.GetKeyDown(KeyCode.F12)) 
         {
             //KillEnemy();
             ThrowSomething();
-        }
-	
+        }*/
+
 	}
 
     void Init() 
@@ -71,19 +77,59 @@ public class EntityInfo : MonoBehaviour
         init = true;
     }
 
-    void IncrementCooldowns(float time) 
+    public float GetHealth()
     {
-
-        for (int i = 0; i < cooldowns.Count; i++)
-        {
-            cooldowns[i] += time;
-        }
-
+        return this.Health;
+    }
+    public float GetStrength() 
+    {
+        return this.Strength;
+    }
+    public float GetDefense() 
+    {
+        return this.Defense;
+    }
+    public float GetIntellect() 
+    {
+        return this.Intellect;
+    }
+    public float GetDexterity() 
+    {
+        return this.Dexterity;
+    }
+    public float GetMovespeed() 
+    {
+        return this.MoveSpeed;
+    }
+    public float GetAttack() 
+    {
+        return this.Attack;
+    }
+    public float GetSpellpower() 
+    {
+        return this.Spellpower;
     }
 
-    public void ReduceHealth(float amount) 
+    public void ReduceHealth(float amount, DamageType type) 
     {
-        this.Health -= amount;
+        
+        switch (type) 
+        {
+            case DamageType.Effect:
+                Debug.Log("Damage is " + amount);
+                this.Health -= amount;
+                break;
+            case DamageType.Skill:
+                Debug.Log("Damage before reduction is " + amount);
+                amount = amount - (amount / this.Defense);
+                Debug.Log("Damage after reduction is " + amount);
+                this.Health -= amount;
+                break;
+            default:
+                Debug.LogError("Function 'ReduceHealth(float amount, DamageType type)' is using default case, BAD DAMAGETYPE PARAMETER.");
+                break;
+        }
+        
     }
 
     public void AlterHealthOffset(float amount) 
@@ -178,30 +224,27 @@ public class EntityInfo : MonoBehaviour
         this.Dexterity = Mathf.CeilToInt(this.info.GetBaseDexterity() + this.Tdexterity);
     }
 
-    public void CastSpell(int num) 
+    public void CastSpell(int num, GameObject Target) 
     {
-        if (cooldowns[num] >= Spells.GetCooldown(num)) 
+        // Check if the skill is on cooldown.
+        if ( !Spells.GetCooldown(num) ) 
         {
             Spells.Cast(num, gameObject, Target);
-            cooldowns[num] = 0.0f;
+            //cooldowns[num] = 0.0f;
             return;
         }
 
-        throw new System.Exception("Skill is on cooldown!");
+        // The skill is on cooldown.
+        //throw new System.Exception("Skill is on cooldown!");
 
     }
 
     public void AddSpell(Skill sk) 
     {
-        cooldowns.Add(0.0f);
+        //cooldowns.Add(0.0f);
         Spells.AddSkill(sk);
         //throw new System.NotImplementedException("Adding a skill is not implemented yet!");
         
-    }
- 
-    public void SetTarget(GameObject target) 
-    {
-        this.Target = target;
     }
 
     public void AddExperience(int amount) 
@@ -258,7 +301,7 @@ public class EntityInfo : MonoBehaviour
 
     private void ThrowSomething() 
     {
-        GetComponentInChildren<LobObject>().Init(Target.transform.position, 1.0f);
+        //GetComponentInChildren<LobObject>().Init(Target.transform.position, 1.0f);
     }
 
 }

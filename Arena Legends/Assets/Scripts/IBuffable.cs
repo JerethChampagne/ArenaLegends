@@ -30,7 +30,7 @@ public class Poison : IBuffable
         if (victim != null) 
         {
 
-            victim.ReduceHealth(value * Time.deltaTime);
+            victim.ReduceHealth(value * Time.deltaTime, DamageType.Effect);
             
         }
     }
@@ -102,7 +102,7 @@ public class Burn : IBuffable
     {
         if (victim != null) 
         {
-            victim.ReduceHealth(value * Time.deltaTime);
+            victim.ReduceHealth(value * Time.deltaTime, DamageType.Effect);
         }
     }
 }
@@ -153,7 +153,7 @@ public class ExtraHits : IBuffable
 
     public override void Apply(EntityInfo victim)
     {
-        victim.ReduceHealth(value);
+        victim.ReduceHealth(value, DamageType.Effect);
         HitNum--;
 
         if (HitNum <= 0) 
