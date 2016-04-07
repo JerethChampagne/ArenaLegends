@@ -57,6 +57,12 @@ public class EntityInfo : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
+        if (!init) 
+        {
+            Init();
+        }
+
+
 
         //IncrementCooldowns(Time.deltaTime);
 
@@ -66,6 +72,12 @@ public class EntityInfo : MonoBehaviour
             //KillEnemy();
             ThrowSomething();
         }*/
+
+        if (this.Health <= 0) 
+        {
+            this.Health = 0;
+            PlayDeath();
+        }
 
 	}
 
@@ -234,8 +246,15 @@ public class EntityInfo : MonoBehaviour
             return;
         }
 
-        // The skill is on cooldown.
-        //throw new System.Exception("Skill is on cooldown!");
+        // Skill did not meet one or more of the criteria to be cast.
+        Debug.Log("Skill could not be used.");
+        if (Spells.GetCooldown(num))
+        {
+            Debug.Log("Skill is on cooldown.");
+        }
+        else { Debug.Log("Skill could not be used for some other reason."); }
+
+        return;
 
     }
 
@@ -302,6 +321,13 @@ public class EntityInfo : MonoBehaviour
     private void ThrowSomething() 
     {
         //GetComponentInChildren<LobObject>().Init(Target.transform.position, 1.0f);
+    }
+
+    void PlayDeath() 
+    {
+        // Play the Death animation here.
+
+        Destroy(this.gameObject, 4.0f);
     }
 
 }

@@ -31,7 +31,7 @@ public class Spellbook
 
         // Skill did not meet one or more of the criteria to be cast.
         Debug.Log("Skill could not be used.");
-        if ( !onCooldown.Contains(Skills[num]) ) 
+        if ( GetCooldown(num) ) 
         {
             Debug.Log("Skill is on cooldown.");
         }

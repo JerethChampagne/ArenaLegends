@@ -33,8 +33,10 @@ public class Skill
 
     public bool isOnCooldown() 
     {
+
         if (coolTimer <= Time.time) 
         {
+            // The coolTimer is lower then the current time implying the cooldown is finished.
             return false;
         }
         else { return true; }
@@ -46,7 +48,7 @@ public class Skill
         // Make sure the Skill can be used on the target.
         if (CastDisplacement(caster, target)) 
         {
-            coolTimer = Time.time + cooldown;
+            coolTimer = Time.time + cooldown; // Set the next time the skill can be used.
             if (!hasCaster) 
             {
                 Init(caster);
