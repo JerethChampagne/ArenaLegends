@@ -5,12 +5,12 @@ public class MouseClickTarget : MonoBehaviour
 {
 
     public GameObject player;
-    EntityInfo info;
+    PlayerBehavior pMono;
 
 	// Use this for initialization
 	void Start () 
     {
-        info = player.GetComponent<EntityInfo>();
+        pMono = player.GetComponent<PlayerBehavior>();
 	}
 	
 	// Update is called once per frame
@@ -24,7 +24,7 @@ public class MouseClickTarget : MonoBehaviour
 
             Physics.Raycast(r, out hitInfo, Mathf.Infinity);
 
-            info.SetTarget(hitInfo.collider.gameObject);
+            pMono.SetTarget(hitInfo.collider.gameObject);
         }
 	
 	}

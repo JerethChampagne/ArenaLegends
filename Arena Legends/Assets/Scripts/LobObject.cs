@@ -23,7 +23,7 @@ public class LobObject : MonoBehaviour
 	void Update () 
     {
         //GetDirection();
-        if (Input.GetKeyDown(KeyCode.Alpha0)) 
+        if (Input.GetKeyDown(KeyCode.Alpha9)) 
         {
             ThrowObject();
         }
