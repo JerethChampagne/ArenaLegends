@@ -1,0 +1,110 @@
+﻿Many Worlds on Unity Asset Store
+support contact: info@many-worlds.es
+
+NECROMANCER CHARACTER
+
+Thanks for your purchase, we hope this model will be a very useful asset into your project.
+For any comment or issue please don’t rate negative, just write us to our support email in the top of this text.
+
+The model you just bought is a character modeled and prepared to work in Unity 4.x
+
+PREFAB:
+
+You will find 2 prefabs: One for all platforms and one specific for Dx11 tesellation. Both includes character controller system from Unity built-in.
+
+ANIMATION:
+
+This asset is mecanim-ready with 18 looped animations compatible with mecanim but it is configured by default to run under legacy.
+
+List of Animations:
+
+Idle1 (low movement)
+Idle2 (strong movement)
+LookLeft
+LookRight
+Attack1
+Attack2
+Attack3
+SpellCast1
+SpellCast2
+GetHit (receive damage)
+GetHit2
+Celebrate
+Walk (no displacement)
+Walk2 (displacement)
+Stunned
+Die
+Jump
+Jump2
+
+All the animations are imported in different and separated FBX files.
+
+MESH:
+
+All meshes are less than 1800 Polygons
+You will find 4 meshes into the Mesh folder:
+
+Necromancer.FBX 	>> Character base mesh
+Necromancer_ClothRobe 	>> Robe mesh for Interactive cloth system
+Necromancer_details 	>> Cape mesh for Interactive cloth system
+Scythe			>> weapon mesh.
+
+
+
+CLOTH:
+
+Cloth system works with skinned cloth and it is ready to go.
+
+
+MATERIALS:
+
+The character uses 2 basic materials. One is for the Base Character, and other for the Cape and Scythe. (there is another set for DX11)
+You will find in your MAPS FOLDER 6 different color textures for your materials. They're numbered to match with the colors perfectly, but you can combine different numbers if you want so.
+
+
+About the TEXTURES:
+
+All 2048x2048 RGBA
+
+[BASE MATERIAL]
+
+necromancer_color+spec(number).tga		>> RGB (color map) A (specular map)
+necromancer_normal+disp.tga			>> RGB (normal map) A (displacement map)
+
+[CAPE & SCYTHE MATERIAL]
+
+necromancer_details_color+spec(number).tga	>> RGB (color map) A (specular map)
+necromancer_details_normal+disp.tga		>> RGB (normal map) A (displacement map)
+necromancer_details_opacity.tga			>> RGBA (opacity, doesn't work with builtin shaders)
+
+
+
+
+
+
+
+UPDATE 1.1
+
+- Added 3 new prefabs (characters with or without cloths & DX11)
+- Added new DX11 Tesellation Shader wich includes the following:
+
+Fake Ambient Occlusion
+Reflection Mask
+Light Wrap Mask (skin material)
+Ambient Rim (matte finish material)
+Custom Specular
+Custom Gloss
+Displace Map
+Normal Map (with smooth)
+
+- Added 2 new materials
+- Added 6 new texture maps as oclussion, tesellation displace or specular
+
+
+UPDATE 1.2
+
+- Old Deprecated prefabs has been eliminated
+- New prefabs working under Legacy with Character Controller
+- Animations added: Jump + Jump2
+- New shader for all platforms: Bumped Specular Rim 2 sided
+- New scene with playable Necromancer and basic rins environment

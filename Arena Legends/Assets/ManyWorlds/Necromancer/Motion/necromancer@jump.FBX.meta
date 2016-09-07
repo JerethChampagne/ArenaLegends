@@ -1,0 +1,252 @@
+fileFormatVersion: 2
+guid: 261615dec18653443b6a8a0124cd67d4
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Necromancer
+    100002: Necromancer5Bone003
+    100004: //RootNode
+    100006: NecromancerHead
+    100008: NecromancerLFinger01
+    100010: NecromancerLFinger02
+    100012: NecromancerLForearm1
+    100014: NecromancerLForearm2
+    100016: NecromancerLForearmCollarbone
+    100018: NecromancerLForearmIKTarget
+    100020: NecromancerLForearmPalm
+    100022: NecromancerLLeg1
+    100024: NecromancerLLeg2
+    100026: NecromancerLLegAnkle
+    100028: NecromancerLLegPlatform
+    100030: NecromancerLThumb01
+    100032: NecromancerLThumb02
+    100034: NecromancerPelvis
+    100036: NecromancerRFinger01
+    100038: NecromancerRFinger02
+    100040: NecromancerRForearm1
+    100042: NecromancerRForearm2
+    100044: NecromancerRForearmCollarbone
+    100046: NecromancerRForearmIKTarget
+    100048: NecromancerRForearmPalm
+    100050: NecromancerRLeg1
+    100052: NecromancerRLeg2
+    100054: NecromancerRLegAnkle
+    100056: NecromancerRLegPlatform
+    100058: NecromancerRThumb01
+    100060: NecromancerRThumb02
+    100062: NecromancerScapula
+    100064: NecromancerSpine
+    100066: NecromancerSpineBelly
+    100068: NecromancerSpineCrotch
+    100070: NecromancerSpineLowChest
+    100072: NecromancerSpineTorax
+    100074: NecromancerSpineUpChest
+    400000: Necromancer
+    400002: Necromancer5Bone003
+    400004: //RootNode
+    400006: NecromancerHead
+    400008: NecromancerLFinger01
+    400010: NecromancerLFinger02
+    400012: NecromancerLForearm1
+    400014: NecromancerLForearm2
+    400016: NecromancerLForearmCollarbone
+    400018: NecromancerLForearmIKTarget
+    400020: NecromancerLForearmPalm
+    400022: NecromancerLLeg1
+    400024: NecromancerLLeg2
+    400026: NecromancerLLegAnkle
+    400028: NecromancerLLegPlatform
+    400030: NecromancerLThumb01
+    400032: NecromancerLThumb02
+    400034: NecromancerPelvis
+    400036: NecromancerRFinger01
+    400038: NecromancerRFinger02
+    400040: NecromancerRForearm1
+    400042: NecromancerRForearm2
+    400044: NecromancerRForearmCollarbone
+    400046: NecromancerRForearmIKTarget
+    400048: NecromancerRForearmPalm
+    400050: NecromancerRLeg1
+    400052: NecromancerRLeg2
+    400054: NecromancerRLegAnkle
+    400056: NecromancerRLegPlatform
+    400058: NecromancerRThumb01
+    400060: NecromancerRThumb02
+    400062: NecromancerScapula
+    400064: NecromancerSpine
+    400066: NecromancerSpineBelly
+    400068: NecromancerSpineCrotch
+    400070: NecromancerSpineLowChest
+    400072: NecromancerSpineTorax
+    400074: NecromancerSpineUpChest
+    7400000: jump
+    9500000: //RootNode
+    11100000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: jump
+      takeName: Take 001
+      firstFrame: 0
+      lastFrame: 50
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Necromancer
+        weight: 1
+      - path: NecromancerLForearmIKTarget
+        weight: 1
+      - path: NecromancerLLegPlatform
+        weight: 1
+      - path: NecromancerPelvis
+        weight: 1
+      - path: NecromancerPelvis/NecromancerLLeg1
+        weight: 1
+      - path: NecromancerPelvis/NecromancerLLeg1/NecromancerLLeg2
+        weight: 1
+      - path: NecromancerPelvis/NecromancerLLeg1/NecromancerLLeg2/NecromancerLLegAnkle
+        weight: 1
+      - path: NecromancerPelvis/NecromancerRLeg1
+        weight: 1
+      - path: NecromancerPelvis/NecromancerRLeg1/NecromancerRLeg2
+        weight: 1
+      - path: NecromancerPelvis/NecromancerRLeg1/NecromancerRLeg2/NecromancerRLegAnkle
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/Necromancer5Bone003
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerLForearmCollarbone
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerLForearmCollarbone/NecromancerLForearm1
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerLForearmCollarbone/NecromancerLForearm1/NecromancerLForearm2
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerLForearmCollarbone/NecromancerLForearm1/NecromancerLForearm2/NecromancerLForearmPalm
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerLForearmCollarbone/NecromancerLForearm1/NecromancerLForearm2/NecromancerLForearmPalm/NecromancerLFinger01
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerLForearmCollarbone/NecromancerLForearm1/NecromancerLForearm2/NecromancerLForearmPalm/NecromancerLFinger01/NecromancerLFinger02
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerLForearmCollarbone/NecromancerLForearm1/NecromancerLForearm2/NecromancerLForearmPalm/NecromancerLThumb01
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerLForearmCollarbone/NecromancerLForearm1/NecromancerLForearm2/NecromancerLForearmPalm/NecromancerLThumb01/NecromancerLThumb02
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerRForearmCollarbone
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerRForearmCollarbone/NecromancerRForearm1
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerRForearmCollarbone/NecromancerRForearm1/NecromancerRForearm2
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerRForearmCollarbone/NecromancerRForearm1/NecromancerRForearm2/NecromancerRForearmPalm
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerRForearmCollarbone/NecromancerRForearm1/NecromancerRForearm2/NecromancerRForearmPalm/NecromancerRFinger01
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerRForearmCollarbone/NecromancerRForearm1/NecromancerRForearm2/NecromancerRForearmPalm/NecromancerRFinger01/NecromancerRFinger02
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerRForearmCollarbone/NecromancerRForearm1/NecromancerRForearm2/NecromancerRForearmPalm/NecromancerRThumb01
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerRForearmCollarbone/NecromancerRForearm1/NecromancerRForearm2/NecromancerRForearmPalm/NecromancerRThumb01/NecromancerRThumb02
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerSpine
+        weight: 1
+      - path: NecromancerPelvis/NecromancerSpineCrotch/NecromancerSpineBelly/NecromancerSpineTorax/NecromancerSpineLowChest/NecromancerSpineUpChest/NecromancerScapula/NecromancerSpine/NecromancerHead
+        weight: 1
+      - path: NecromancerRForearmIKTarget
+        weight: 1
+      - path: NecromancerRLegPlatform
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.08
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

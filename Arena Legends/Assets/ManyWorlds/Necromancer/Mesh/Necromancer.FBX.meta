@@ -1,0 +1,177 @@
+fileFormatVersion: 2
+guid: eb53109f36fa858419e6d2251d08087a
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BodyMesh
+    100002: //RootNode
+    100004: Necromancer
+    100006: Necromancer5Bone003
+    100008: NecromancerHead
+    100010: NecromancerLFinger01
+    100012: NecromancerLFinger02
+    100014: NecromancerLForearm1
+    100016: NecromancerLForearm2
+    100018: NecromancerLForearmCollarbone
+    100020: NecromancerLForearmPalm
+    100022: NecromancerLLeg1
+    100024: NecromancerLLeg2
+    100026: NecromancerLLegAnkle
+    100028: NecromancerLLegPlatform
+    100030: NecromancerLThumb01
+    100032: NecromancerLThumb02
+    100034: NecromancerPelvis
+    100036: NecromancerRFinger01
+    100038: NecromancerRFinger02
+    100040: NecromancerRForearm1
+    100042: NecromancerRForearm2
+    100044: NecromancerRForearmCollarbone
+    100046: NecromancerRForearmPalm
+    100048: NecromancerRLeg1
+    100050: NecromancerRLeg2
+    100052: NecromancerRLegAnkle
+    100054: NecromancerRLegPlatform
+    100056: NecromancerRThumb01
+    100058: NecromancerRThumb02
+    100060: NecromancerScapula
+    100062: NecromancerSpine
+    100064: NecromancerSpineBelly
+    100066: NecromancerSpineCrotch
+    100068: NecromancerSpineLowChest
+    100070: NecromancerSpineTorax
+    100072: NecromancerSpineUpChest
+    100074: SkinnedSkirt
+    100076: Box001
+    100078: Legs
+    100080: ClothAddons
+    100082: NecromancerLForearmIKTarget
+    100084: NecromancerRForearmIKTarget
+    400000: BodyMesh
+    400002: //RootNode
+    400004: Necromancer
+    400006: Necromancer5Bone003
+    400008: NecromancerHead
+    400010: NecromancerLFinger01
+    400012: NecromancerLFinger02
+    400014: NecromancerLForearm1
+    400016: NecromancerLForearm2
+    400018: NecromancerLForearmCollarbone
+    400020: NecromancerLForearmPalm
+    400022: NecromancerLLeg1
+    400024: NecromancerLLeg2
+    400026: NecromancerLLegAnkle
+    400028: NecromancerLLegPlatform
+    400030: NecromancerLThumb01
+    400032: NecromancerLThumb02
+    400034: NecromancerPelvis
+    400036: NecromancerRFinger01
+    400038: NecromancerRFinger02
+    400040: NecromancerRForearm1
+    400042: NecromancerRForearm2
+    400044: NecromancerRForearmCollarbone
+    400046: NecromancerRForearmPalm
+    400048: NecromancerRLeg1
+    400050: NecromancerRLeg2
+    400052: NecromancerRLegAnkle
+    400054: NecromancerRLegPlatform
+    400056: NecromancerRThumb01
+    400058: NecromancerRThumb02
+    400060: NecromancerScapula
+    400062: NecromancerSpine
+    400064: NecromancerSpineBelly
+    400066: NecromancerSpineCrotch
+    400068: NecromancerSpineLowChest
+    400070: NecromancerSpineTorax
+    400072: NecromancerSpineUpChest
+    400074: SkinnedSkirt
+    400076: Box001
+    400078: Legs
+    400080: ClothAddons
+    400082: NecromancerLForearmIKTarget
+    400084: NecromancerRForearmIKTarget
+    2300000: Box001
+    2300002: BodyMesh
+    2300004: ClothAddons
+    2300006: Legs
+    2300008: SkinnedSkirt
+    3300000: Box001
+    3300002: BodyMesh
+    3300004: ClothAddons
+    3300006: Legs
+    3300008: SkinnedSkirt
+    4300000: BodyMesh
+    4300002: SkinnedSkirt
+    4300004: Box001
+    4300006: Legs
+    4300008: ClothAddons
+    7400000: Take 001
+    9500000: //RootNode
+    11100000: //RootNode
+    13700000: BodyMesh
+    13700002: SkinnedSkirt
+    13700004: Legs
+    13700006: ClothAddons
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 2
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.08
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 1
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -54,8 +54,8 @@ public class Skill
                 Init(caster);
             }
 
-            Debug.Log("There are no particle systems to play yet!");
-            //PlaySpell(target);
+            //Debug.Log("There are no particle systems to play yet!");
+            PlaySpell(target);
 
             // Alter the Damage of the spell.
             EntityInfo pInfo = caster.GetComponent<EntityInfo>();
@@ -103,9 +103,17 @@ public class Skill
 
     void PlaySpell(GameObject target) 
     {
-        MonoBehaviour.Instantiate(pSys);
+        GameObject GO = MonoBehaviour.Instantiate(pSys);
+        
+        // Give the GO a starting position vector.
+        Vector3 position = Caster.transform.Find("SpellTarget").position;
+        GO.transform.position = position;
 
         // EffectSetting's target needs to be assigned here.
+        EffectSettings eSet = GO.GetComponent<EffectSettings>();
+        eSet.Target = target.transform.Find("SpellTarget").gameObject;
+
+        MonoBehaviour.Destroy(GO, 10.0f);
 
     }
 

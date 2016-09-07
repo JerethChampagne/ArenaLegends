@@ -8,10 +8,13 @@ public class PlayerBehavior : MonoBehaviour
     public GameObject target;
     bool init = false;
 
+    // This is for testing the particle systems.
+    public PsysManager psys;
+
 	// Use this for initialization
 	void Start () 
     {
-	
+        psys = GameObject.Find("Spell Cast Transform").GetComponent<PsysManager>();
 	}
 	
 	// Update is called once per frame
@@ -26,14 +29,18 @@ public class PlayerBehavior : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
-            Debug.Log("Adding Fireball to the spellbook.");
-            eInfo.AddSpell(new Skill("Fireball", "Lobs a ball of fire.", 10f, 15f, 5f, 90f, null));
-            Debug.Log("Fireball has been added to the spellbook.");
+            Debug.Log("Adding Firebolt to the spellbook.");
+            eInfo.AddSpell(new Skill("Firebolt", "Lobs a bolt of fire.", 10f, 15f, 5f, 90f, psys.GetSystem("Firebolt").psys ));
+            Debug.Log("Firebolt has been added to the spellbook.");
+            
+            Debug.Log("Adding Ice Spikes to the spellbook.");
+            eInfo.AddSpell(new Skill("Ice Spikes", "Ice spikes chase after an enemy target.", 10f, 15f, 5f, 90f, psys.GetSystem("IceSpikes").psys));
+            Debug.Log("Ice Spikes has been added to the spellbook.");
         }
 
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            eInfo.CastSpell(0, this.target);
+            eInfo.CastSpell(1, this.target);
         }
 	
 	}
