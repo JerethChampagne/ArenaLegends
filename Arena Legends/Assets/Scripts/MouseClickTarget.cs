@@ -24,7 +24,9 @@ public class MouseClickTarget : MonoBehaviour
 
             Physics.Raycast(r, out hitInfo, Mathf.Infinity);
 
-            pMono.SetTarget(hitInfo.collider.gameObject);
+            Transform GO = hitInfo.collider.gameObject.transform;
+
+            pMono.SetTarget(GO.gameObject);
         }
 	
 	}
