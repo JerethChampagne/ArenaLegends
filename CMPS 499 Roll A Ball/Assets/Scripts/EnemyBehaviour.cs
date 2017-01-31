@@ -171,4 +171,18 @@ public class EnemyBehaviour : MonoBehaviour
         }
     }
 
+    void OnCollisionEnter(Collision col) 
+    {
+        if (col.collider.CompareTag("Player")) 
+        {
+            // Trigger the TakeDamage event on the player.
+            col.collider.gameObject.BroadcastMessage("TakeDamage", 2.0f);
+
+            // Destroy this enemy.
+            MonoBehaviour.Destroy(this.gameObject, 0.1f);
+        }
+        
+        
+    }
+
 }

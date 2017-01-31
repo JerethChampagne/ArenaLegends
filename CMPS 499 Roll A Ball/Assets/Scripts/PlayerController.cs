@@ -29,7 +29,6 @@ public class PlayerController : MonoBehaviour
     {
         turrets = new List<GameObject>();
         rb = GetComponent<Rigidbody>();
-        count = 0;
         SetCountText();
         winText.text = "";
         if (CombatEvent == null) 
@@ -57,6 +56,12 @@ public class PlayerController : MonoBehaviour
                     PushEnemiesAway();
                 }
             }
+        }
+
+        if (Input.GetKeyDown(KeyCode.F12)) 
+        {
+            count += 1000;
+            SetCountText();
         }
         
 	}
@@ -93,7 +98,7 @@ public class PlayerController : MonoBehaviour
     void SetCountText () 
     {
         countText.text = "Count: " + count.ToString();
-        if (count >= 17) 
+        if (count >= 100) 
         {
             winText.text = "You Win!";
         }
@@ -112,14 +117,17 @@ public class PlayerController : MonoBehaviour
     {
         hp -= damage;
 
+        CheckHealth();
+
     }
 
     void CheckHealth() 
     {
         if (this.hp <= 0) 
         {
-            MonoBehaviour.Destroy(this.gameObject, 20.0f);
-            //  TODO: Game Over Sequence.
+            // Player loses.
+            winText.text = "YOU LOSE! HAHAHA!";
+            MonoBehaviour.Destroy(this.gameObject, 10.0f);
         }
     }
 
@@ -148,6 +156,8 @@ public class PlayerController : MonoBehaviour
             RB.gameObject.BroadcastMessage("TakeDamage", count / 5);
             SubtractCount(Mathf.CeilToInt(count / 5));
         }
+
+        MonoBehaviour.Destroy(GO, 2.0f);
     }
 
     void MakeTurret() 
@@ -177,7 +187,7 @@ public class PlayerController : MonoBehaviour
 
     void SubtractCount(int i) 
     {
-        count -= i;
+        this.count -= i;
     }
 
     
