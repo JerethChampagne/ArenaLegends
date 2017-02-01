@@ -63,6 +63,8 @@ public class PlayerController : MonoBehaviour
             count += 1000;
             SetCountText();
         }
+
+        impulse = count;
         
 	}
 
@@ -88,6 +90,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.CompareTag("Pick Up")) 
         {
             other.gameObject.SetActive(false);
+            Destroy(other.gameObject, 0.1f);
             count++;
             impulse++;
             SetCountText();
