@@ -79,6 +79,8 @@ public class TurretBehaviour : MonoBehaviour
             BulletBehaviour BB = GO.GetComponent<BulletBehaviour>();
             BB.target = targets[0];
             BB.speed = bulletSpeed;
+
+            targets.Remove(targets[0]);
         }
     }
 }

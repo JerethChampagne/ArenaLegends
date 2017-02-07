@@ -19,11 +19,16 @@ public class BulletBehaviour : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-		// Get direction vector.
-        Vector3 dir = target.transform.position - this.transform.position;
+        // Check to make sure the target is still viable.
+        if (CheckTarget())
+        {
+            // Get direction vector.
+            Vector3 dir = target.transform.position - this.transform.position;
 
-        // Move in that direction.
-        this.transform.position += dir.normalized * speed * Time.deltaTime;
+            // Move in that direction.
+            this.transform.position += dir.normalized * speed * Time.deltaTime;
+        }
+		
 	}
 
     void OnTriggerEnter(Collider other) 
@@ -34,5 +39,16 @@ public class BulletBehaviour : MonoBehaviour
         }
 
         MonoBehaviour.Destroy(this.gameObject);
+    }
+
+    bool CheckTarget()
+    {
+        if (target == null)
+        {
+            Destroy(this.gameObject, 0.1f);
+            return false;
+        }
+
+        return true;
     }
 }

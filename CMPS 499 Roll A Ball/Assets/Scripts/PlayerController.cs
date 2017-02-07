@@ -36,7 +36,9 @@ public class PlayerController : MonoBehaviour
             CombatEvent = new myCombatEvent();
         }
         CombatEvent.AddListener(TakeDamage);
-	}
+
+        impulse = count;
+    }
 	
 	// Update is called once per frame
 	void Update () 
@@ -64,7 +66,12 @@ public class PlayerController : MonoBehaviour
             SetCountText();
         }
 
-        impulse = count;
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        
         
 	}
 
@@ -77,6 +84,10 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            if (impulse > 100)
+            {
+                impulse = 100;
+            }
             rb.AddForce(movement * speed * impulse);
         }
         else 
@@ -105,6 +116,8 @@ public class PlayerController : MonoBehaviour
         {
             winText.text = "You Win!";
         }
+
+        impulse = count;
 
     }
 
@@ -172,7 +185,7 @@ public class PlayerController : MonoBehaviour
         GameObject GO = MonoBehaviour.Instantiate(turretPrefab) as GameObject;
         turrets.Add(GO);
 
-        GO.transform.position = this.transform.position + ( this.transform.forward * (-1) );
+        GO.transform.position = this.transform.position + Vector3.back;
     }
 
     void Attack() 
