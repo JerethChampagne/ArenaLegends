@@ -176,10 +176,10 @@ public class EnemyBehaviour : MonoBehaviour
         if (col.collider.CompareTag("Player")) 
         {
             // Trigger the TakeDamage event on the player.
-            col.collider.gameObject.BroadcastMessage("TakeDamage", 2.0f);
+            col.collider.gameObject.BroadcastMessage("TakeDamage", 10.0f);
 
             // Destroy this enemy.
-            MonoBehaviour.Destroy(this.gameObject, 0.1f);
+            MonoBehaviour.Destroy(this.gameObject);
         }
         
         
