@@ -1,13 +1,8 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
-
-public enum ShootType
-{
-    Bullet,
-    FlameThrower
-}
 
 public class PlayerShooting : MonoBehaviour
 {
@@ -23,7 +18,8 @@ public class PlayerShooting : MonoBehaviour
     public float FlameDPS;
     public float fuelRegenTimer;
     public float flameWaitTime;
-    ShootType type;
+    public Slider fuelSlider;
+    
 
     float timer;
     Ray shootRay = new Ray();
@@ -57,7 +53,7 @@ public class PlayerShooting : MonoBehaviour
         {
             Shoot ();
         }
-        if (Input.GetButton("Fire2") && !Input.GetButton("Fire1") && CanFlame())
+        if (CanFlame() && !Input.GetButton("Fire1") && Input.GetButton("Fire2"))
         {
             Flame();
         }
@@ -70,6 +66,10 @@ public class PlayerShooting : MonoBehaviour
         {
             DisableEffects ();
         }
+
+        fuelSlider.value = fuel;
+
+        
     }
 
 
@@ -116,6 +116,7 @@ public class PlayerShooting : MonoBehaviour
     {
         fuel -= FlameCost * Time.deltaTime;
 
+
         // Play audio clip.
         AudioSource audio = flamethrower.gameObject.GetComponent<AudioSource>();
 
@@ -133,7 +134,7 @@ public class PlayerShooting : MonoBehaviour
         
 
         Collider[] cols = Physics.OverlapSphere(transform.position, 6f, shootableMask);
-
+        
         foreach (Collider col in cols) 
         {
             if (col.CompareTag("Enemy")) 
@@ -163,7 +164,7 @@ public class PlayerShooting : MonoBehaviour
     bool CanFlame() 
     {
         // The flamethrower is not on cooldown.
-        if (fuelRegenTimer <= Time.time) 
+        if (fuelRegenTimer <= Time.time)
         {
             // No more fuel.
             if (fuel < 0)
@@ -179,21 +180,20 @@ public class PlayerShooting : MonoBehaviour
                 // There is fuel.
                 return true;
             }
-            else 
+            else
             {
                 return true;
             }
-            
-            
-        }
 
-        // If the current time is not greater than the regen timer then we cannot flame.
-        if (fuelRegenTimer <= Time.time)
+
+        }
+        else
         {
+            // This statement is probably not needed, but let us be safe.
+            
+            // Else is if fuelRegenTimer > Time.time; so the flamethrower is on cooldown.
             return false;
         }
-
-        return false;
         
     }
 }
