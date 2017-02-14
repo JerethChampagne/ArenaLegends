@@ -3,6 +3,8 @@
 public class PlayerMovement : MonoBehaviour
 {
     public float speed = 6f;    // The speed the player will move at.
+    public Vector3 eulerAngleVelocity;
+    public float angleVelocity;
 
     Vector3 movement;           // The vector to store the direction of the player's movement.
     Animator anim;              // Reference to the animator component.
@@ -29,7 +31,8 @@ public class PlayerMovement : MonoBehaviour
         Move(h, v);
 
         // Turn the player to face the mouse cursor.
-        Turning();
+        Turning(h);
+        
 
         // Animate the player.
         Animating(h, v);
@@ -39,7 +42,8 @@ public class PlayerMovement : MonoBehaviour
     void Move(float h, float v) 
     {
         // Set the movement vector based of the axis input.
-        movement.Set(h, 0f, v);
+        //movement.Set(h, 0f, v);
+        movement = transform.forward * v;
 
         // Normalize the movement vector and make it proportional to the speed per second.
         movement = movement.normalized * speed * Time.deltaTime;
@@ -48,9 +52,14 @@ public class PlayerMovement : MonoBehaviour
         rb.MovePosition(transform.position + movement);
     }
 
-    void Turning() 
+    void Turning(float h) 
     {
-        // Create a ray from the mouse cursor on the creen in the direction of the camera.
+
+        eulerAngleVelocity = new Vector3(0, h * angleVelocity, 0);
+        Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);
+        rb.MoveRotation(transform.rotation * deltaRotation);
+
+        /*// Create a ray from the mouse cursor on the creen in the direction of the camera.
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         // Create a RaycastHit variable to store information about what was hit by the ray.
@@ -70,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
             // Set the player's rotation to this new rotation.
             rb.MoveRotation(newRotation);
-        }
+        }*/
     }
 
     void Animating(float h, float v) 

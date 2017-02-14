@@ -586,6 +586,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 6
+  eulerAngleVelocity: {x: 0, y: 0, z: 0}
+  angleVelocity: 100
 --- !u!114 &114461103241250680
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -604,7 +606,7 @@ MonoBehaviour:
   canFlame: 1
   audioTime: 0
   waitTime: 9.83
-  flamethrower: {fileID: 0}
+  flamethrower: {fileID: 1976855911565956}
   FlameCost: 20
   FlameDPS: 100
   fuelRegenTimer: 0
@@ -880,7 +882,7 @@ ParticleSystem:
   moveWithTransform: 0
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 2
-  randomSeed: -1372652807
+  randomSeed: 2066746399
   InitialModule:
     serializedVersion: 3
     enabled: 1
