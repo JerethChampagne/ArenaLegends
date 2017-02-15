@@ -14,11 +14,12 @@ public class WandBehaviour : MonoBehaviour
     public Transform O;
     Vectornian T;
     public bool hasObject = false;
+    public GameObject cylinder;
 
 	// Use this for initialization
 	void Start () 
     {
-		
+        
 	}
 	
 	// Update is called once per frame
@@ -34,7 +35,7 @@ public class WandBehaviour : MonoBehaviour
             if (!hasObject)
             {
                 RaycastHit hit;
-                if (Physics.Raycast(transform.position, transform.forward, out hit, 100f))
+                if (Physics.Raycast(transform.position, transform.forward, out hit, cylinder.transform.localPosition.z * 2) && hit.collider.gameObject.GetComponent<Pickable>() != null)
                 {
                     O = hit.collider.transform;
 
@@ -48,11 +49,15 @@ public class WandBehaviour : MonoBehaviour
                     T.rotation = (O.rotation * V.rotation);
                     hasObject = true;
 
+                    O.gameObject.BroadcastMessage("ChangeShader");
+
+
                 }
             }
             else 
             {
                 hasObject = false;
+                O.gameObject.BroadcastMessage("ChangeShader");
             }
         }
 
@@ -66,7 +71,7 @@ public class WandBehaviour : MonoBehaviour
 
 
 	}
-
+    
 
     void SetOrientation() 
     {
