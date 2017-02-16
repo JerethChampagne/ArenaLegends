@@ -13,16 +13,18 @@ public class CameraFollow : MonoBehaviour
     void Start() 
     {
         // Calculate initial offset.
-        offset = transform.position - target.position;
+        //offset = transform.position - target.position;
     }
 
     void FixedUpdate() 
     {
+
+        
         // Create a position the camera is aiming for based on the offset from the target.
-        Vector3 targetCamPos = target.position + offset;
+        //Vector3 targetCamPos = target.position + offset;
 
         // Smoothly interpolate between the camera's  current position and it's terget position.
-        transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
+        //transform.position = Vector3.Lerp(transform.position, targetCamPos, smoothing * Time.deltaTime);
     }
 	
 }
