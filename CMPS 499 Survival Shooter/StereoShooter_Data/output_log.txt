@@ -1,0 +1,262 @@
+Initialize engine version: 5.5.0f3 (38b4efef76f0)
+GfxDevice: creating device client; threaded=1
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.0]
+    Renderer: NVIDIA Quadro 2000 (ID=0xdd8)
+    Vendor:   NVIDIA
+    VRAM:     977 MB
+    Driver:   9.18.13.3250
+Begin MonoManager ReloadAssembly
+Platform assembly: C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\UnityEngine.dll (this message is harmless)
+Loading C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\UnityEngine.dll into Unity Child Domain
+Platform assembly: C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\Assembly-CSharp.dll (this message is harmless)
+Loading C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\Assembly-CSharp.dll into Unity Child Domain
+Platform assembly: C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\UnityEngine.UI.dll (this message is harmless)
+Loading C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\UnityEngine.UI.dll into Unity Child Domain
+Platform assembly: C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\UnityEngine.Networking.dll (this message is harmless)
+Loading C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\UnityEngine.Networking.dll into Unity Child Domain
+Platform assembly: C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll (this message is harmless)
+Loading C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\UnityEngine.PlaymodeTestsRunner.dll into Unity Child Domain
+Platform assembly: C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\UnityEngine.Analytics.dll (this message is harmless)
+Loading C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\UnityEngine.Analytics.dll into Unity Child Domain
+- Completed reload, in  1.548 seconds
+Platform assembly: C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\System.Core.dll (this message is harmless)
+Platform assembly: C:\Users\jcc8615.GAMELAB\Documents\GitHub\ArenaLegends\CMPS 499 Survival Shooter\StereoShooter_Data\Managed\System.dll (this message is harmless)
+desktop: 1920x1200 59Hz; virtual: 3120x1920 at 0,-301
+<RI> Initializing input.
+<RI> Input initialized.
+<RI> Initialized touch support.
+UnloadTime: 1.587163 ms
+Setting up 8 worker threads for Enlighten.
+  Thread -> id: 2d40 -> priority: 1 
+  Thread -> id: b20 -> priority: 1 
+  Thread -> id: 4470 -> priority: 1 
+  Thread -> id: 4a10 -> priority: 1 
+  Thread -> id: 4d2c -> priority: 1 
+  Thread -> id: 5460 -> priority: 1 
+  Thread -> id: 5048 -> priority: 1 
+  Thread -> id: 5544 -> priority: 1 
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerEnter!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+
+I've entered OnTriggerExit!
+ 
+(Filename: C:/buildslave/unity/build/artifacts/generated/common/runtime/DebugBindings.gen.cpp Line: 51)
+

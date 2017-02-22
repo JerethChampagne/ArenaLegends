@@ -11,6 +11,8 @@ using System.Collections;
 [ExecuteInEditMode]
 public class CameraStereo : MonoBehaviour
 {
+    public float scaleFactor;
+    public float dimW, dimH, depth, ipdM;
     public float H, W, D, IPD, s;
     public float left = -0.2F;
     public float right = 0.2F;
@@ -18,6 +20,12 @@ public class CameraStereo : MonoBehaviour
     public float bottom = -0.2F;
 
     public bool leftCam;
+
+    void Start() 
+    {
+        Calculate();
+    }
+
     void LateUpdate()
     {
         Camera cam = Camera.main;
@@ -75,5 +83,13 @@ public class CameraStereo : MonoBehaviour
         this.right = s * (W - IPD) / 2;
         this.bottom = -s * H / 2;
         this.top = s * H / 2;
+    }
+
+    void Calculate() 
+    {
+        this.H = this.scaleFactor * this.dimH;
+        this.W = this.scaleFactor * this.dimW;
+        this.D = this.scaleFactor * this.depth;
+        this.IPD = this.scaleFactor * this.ipdM;
     }
 }
