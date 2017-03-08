@@ -25,12 +25,12 @@ public class WandBehaviour : MonoBehaviour
 	// Update is called once per frame
 	void Update () 
     {
-        angle1 = (Input.mousePosition.x / Screen.width);
-        angle2 = (Input.mousePosition.y / Screen.height);
+        //angle1 = (Input.mousePosition.x / Screen.width);
+        //angle2 = (Input.mousePosition.y / Screen.height);
 
         SetOrientation();
 
-        if (Input.GetKeyDown(KeyCode.Space)) 
+        if (OVRInput.GetDown(OVRInput.RawButton.RHandTrigger)) 
         {
             if (!hasObject)
             {
@@ -75,7 +75,7 @@ public class WandBehaviour : MonoBehaviour
 
     void SetOrientation() 
     {
-        transform.localEulerAngles = new Vector3((-75f * (angle2 - 0.5f)), (75f * (angle1 - 0.5f)), 0f);
+        //transform.localEulerAngles = new Vector3((-75f * (angle2 - 0.5f)), (75f * (angle1 - 0.5f)), 0f);
         
     }
 

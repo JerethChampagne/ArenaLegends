@@ -24,18 +24,18 @@ public class PlayerMovement : MonoBehaviour
 
     void FixedUpdate() 
     {
-        float h = Input.GetAxisRaw("Horizontal");
-        float v = Input.GetAxisRaw("Vertical");
+        //float h = Input.GetAxisRaw("Horizontal");
+        //float v = Input.GetAxisRaw("Vertical");
 
         // Move the player around the scene.
-        Move(h, v);
+        //Move(h, v);
 
         // Turn the player to face the mouse cursor.
-        Turning(h);
+        //Turning(h);
         
 
         // Animate the player.
-        Animating(h, v);
+        //Animating(h, v);
         
     }
 
@@ -55,9 +55,9 @@ public class PlayerMovement : MonoBehaviour
     void Turning(float h) 
     {
 
-        eulerAngleVelocity = new Vector3(0, h * angleVelocity, 0);
-        Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);
-        rb.MoveRotation(transform.rotation * deltaRotation);
+        //eulerAngleVelocity = new Vector3(0, h * angleVelocity, 0);
+        //Quaternion deltaRotation = Quaternion.Euler(eulerAngleVelocity * Time.deltaTime);
+        //rb.MoveRotation(transform.rotation * deltaRotation);
 
         /*// Create a ray from the mouse cursor on the creen in the direction of the camera.
         Ray camRay = Camera.main.ScreenPointToRay(Input.mousePosition);
