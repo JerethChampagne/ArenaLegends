@@ -28,7 +28,7 @@ public class CameraStereo : MonoBehaviour
 
     void LateUpdate()
     {
-        Camera cam = Camera.main;
+        Camera cam = GetComponent<Camera>();
         s = cam.nearClipPlane / D;
 
         if (leftCam) 
@@ -91,5 +91,10 @@ public class CameraStereo : MonoBehaviour
         this.W = this.scaleFactor * this.dimW;
         this.D = this.scaleFactor * this.depth;
         this.IPD = this.scaleFactor * this.ipdM;
+        if (leftCam)
+        {
+            this.transform.localPosition = new Vector3(-this.IPD / 2, 0, 0);
+        }
+        else { this.transform.localPosition = new Vector3(this.IPD / 2, 0, 0); }
     }
 }
